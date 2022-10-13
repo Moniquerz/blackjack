@@ -1,5 +1,5 @@
-let firstCard = 8;
-let secondCard = 10;
+let firstCard = randomCard();
+let secondCard = randomCard();
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard;
 // console.log(sum);
@@ -13,6 +13,17 @@ let sumEl = document.querySelector("#sumEl")
 let cardsEl = document.querySelector("#cardsEl")
 // console.log(messageEl)
 // console.log(sumEl)
+
+function randomCard(){
+    let randomCard = Math.floor(Math.random() * 13) + 1
+    if(randomCard > 10) {
+        return 10
+    } else if(randomCard === 1){
+        return 11
+    } else {
+        return randomCard
+    }
+}
 
 function start() {
     renderGame();
@@ -41,7 +52,7 @@ function renderGame() {
 }
 
 function newCard() {
-    let card= 2;
+    let card= randomCard();
     sum+= card;
     cards.push(card)
     renderGame();
