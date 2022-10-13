@@ -52,8 +52,10 @@ function renderGame() {
 }
 
 function newCard() {
-    let card= randomCard();
-    sum+= card;
-    cards.push(card)
-    renderGame();
+    if(isAlive === true && blackjack === false){
+        let card= randomCard();
+        sum+= card;
+        cards.push(card)
+        renderGame();
+    }
 }
